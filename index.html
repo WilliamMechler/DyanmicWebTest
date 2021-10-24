@@ -21,16 +21,19 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-      
+
       function write(){
-        
+        app.database().ref("User").set({
+          name : document.getElementById("nameField").value,
+          age : document.getElementById("ageField").value
+        });
       }
 </script>
-    
+
     <h1>Test input</h1>
     <input tpye="text" placeholder="name" id="nameField">
     <input type="text" placeholder="age" id="ageField">
     <button onclick="write">Submit</button>
-    
-  </body> 
+
+  </body>
 </html>
